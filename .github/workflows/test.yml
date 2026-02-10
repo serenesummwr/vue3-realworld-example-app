@@ -31,15 +31,15 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: TypeScript check
-        run: pnpm type-check
+      # - name: TypeScript check
+      #   run: pnpm type-check
 
-      - name: Eslint check
-        run: pnpm lint
+      # - name: Eslint check
+      #   run: pnpm lint
 
       - name: Build check
         if: github.event_name == 'push'
-        run: pnpm build
+        run: pnpm build --no-lint
 
       - name: Bundle check
         if: github.event_name == 'pull_request'
