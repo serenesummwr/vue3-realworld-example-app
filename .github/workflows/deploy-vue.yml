@@ -3,13 +3,13 @@ name: deploy vue
 on:
   push:
     branches:
-      - main
+      - prod
 
 jobs:
   deploy-app:
     runs-on: ubuntu-latest
     steps:
-      - name: check out the code to build server
+      - name: check out the code
         uses: actions/checkout@v4
 
       - uses: pnpm/action-setup@v4
